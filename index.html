@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Galeria Animada</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Font Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="container" id="top">
+
+        <div class="titulo texto-color">
+            <h1>Home Nutri Eventos</h1>
+            <p>Clique em qualquer imagem para visualizar.</p>
+        </div>
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="img/05-img.png" alt="">
+                <div class="overlay">
+                    <h3>Imagem 05</h3>
+                    <span>Ver detalhes</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/06-img.png" alt="">
+                <div class="overlay">
+                    <h3>Imagem 06</h3>
+                    <span>Ver detalhes</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/07-img.png" alt="">
+                <div class="overlay">
+                    <h3>Imagem 07</h3>
+                    <span>Ver detalhes</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/08-img.png" alt="">
+                <div class="overlay">
+                    <h3>Imagem 08</h3>
+                    <span>Ver detalhes</span>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="footer-container">
+            <a href="galeria.html" class="btn-topo">Galeria</a>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox">
+
+        <span class="close">&times;</span>
+
+        <img class="lightbox-image">
+
+        <div class="buttons">
+
+            <button id="prev">
+                ◀
+            </button>
+
+            <button id="next">
+                ▶
+            </button>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
