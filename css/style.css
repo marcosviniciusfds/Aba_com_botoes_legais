@@ -105,6 +105,100 @@ body {
         0 30px 60px rgba(0, 0, 0, .45);
 }
 
+/* =======================================
+CARD DESTAQUE
+======================================= */
+
+.card.featured {
+
+    grid-column: span 2;
+
+    grid-row: span 2;
+
+    height: 720px;
+
+    z-index: 20;
+
+}
+
+.card.featured img {
+
+    transform: scale(1.08);
+
+}
+
+.card.featured .overlay {
+
+    padding: 45px;
+}
+
+.card.featured h3 {
+
+    font-size: 40px;
+}
+
+.card.featured span {
+
+    font-size: 18px;
+}
+
+/* ===========================
+   IMAGEM DESFOCADO
+=========================== */
+
+.gallery.blur {
+
+    filter: blur(6px);
+
+    transition: .5s;
+
+}
+
+.card.featured {
+
+    filter: none;
+}
+
+/* ===========================
+   EFEITO CINEMÁTICO
+=========================== */
+
+.card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(180deg,
+
+            transparent 10%,
+
+            rgba(0, 0, 0, .05),
+
+            rgba(0, 0, 0, .45));
+
+    pointer-events: none;
+
+}
+
+/* ===========================
+   EFEITO CLOW
+=========================== */
+
+.card:hover {
+
+    box-shadow:
+
+        0 20px 70px rgba(0, 0, 0, .45),
+
+        0 0 50px rgba(255, 255, 255, .08);
+
+}
+
 /* ===========================
    IMAGEM
 =========================== */

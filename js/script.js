@@ -21,14 +21,14 @@ let current = 0;
 // ABRIR LIGHTBOX
 // ================================
 
-function openLightbox(index){
+function openLightbox(index) {
 
     current = index;
 
     lightboxImage.src =
         cards[current]
-        .querySelector("img")
-        .src;
+            .querySelector("img")
+            .src;
 
     lightbox.classList.add("active");
 
@@ -37,15 +37,15 @@ function openLightbox(index){
         ".lightbox-image",
 
         {
-            scale:.8,
-            opacity:0
+            scale: .8,
+            opacity: 0
         },
 
         {
-            scale:1,
-            opacity:1,
-            duration:.45,
-            ease:"power3.out"
+            scale: 1,
+            opacity: 1,
+            duration: .45,
+            ease: "power3.out"
         }
 
     );
@@ -56,7 +56,7 @@ function openLightbox(index){
 // FECHAR
 // ================================
 
-function closeLightbox(){
+function closeLightbox() {
 
     gsap.to(
 
@@ -64,13 +64,13 @@ function closeLightbox(){
 
         {
 
-            scale:.8,
+            scale: .8,
 
-            opacity:0,
+            opacity: 0,
 
-            duration:.25,
+            duration: .25,
 
-            onComplete(){
+            onComplete() {
 
                 lightbox.classList.remove("active");
 
@@ -86,11 +86,11 @@ function closeLightbox(){
 // PRÓXIMA
 // ================================
 
-function nextImage(){
+function nextImage() {
 
     current++;
 
-    if(current >= cards.length){
+    if (current >= cards.length) {
 
         current = 0;
 
@@ -104,13 +104,13 @@ function nextImage(){
 // ANTERIOR
 // ================================
 
-function prevImage(){
+function prevImage() {
 
     current--;
 
-    if(current < 0){
+    if (current < 0) {
 
-        current = cards.length-1;
+        current = cards.length - 1;
 
     }
 
@@ -122,7 +122,7 @@ function prevImage(){
 // TROCAR IMAGEM
 // ================================
 
-function changeImage(){
+function changeImage() {
 
     gsap.to(
 
@@ -130,18 +130,18 @@ function changeImage(){
 
         {
 
-            opacity:0,
+            opacity: 0,
 
-            scale:.92,
+            scale: .92,
 
-            duration:.20,
+            duration: .20,
 
-            onComplete(){
+            onComplete() {
 
                 lightboxImage.src =
-                cards[current]
-                .querySelector("img")
-                .src;
+                    cards[current]
+                        .querySelector("img")
+                        .src;
 
                 gsap.fromTo(
 
@@ -149,16 +149,16 @@ function changeImage(){
 
                     {
 
-                        opacity:0,
-                        scale:1.05
+                        opacity: 0,
+                        scale: 1.05
 
                     },
 
                     {
 
-                        opacity:1,
-                        scale:1,
-                        duration:.30
+                        opacity: 1,
+                        scale: 1,
+                        duration: .30
 
                     }
 
@@ -176,9 +176,9 @@ function changeImage(){
 // CLICK CARD
 // ================================
 
-cards.forEach((card,index)=>{
+cards.forEach((card, index) => {
 
-    card.addEventListener("click",()=>{
+    card.addEventListener("click", () => {
 
         openLightbox(index);
 
@@ -200,9 +200,9 @@ btnClose.onclick = closeLightbox;
 // FECHAR CLICANDO FORA
 // ================================
 
-lightbox.addEventListener("click",(e)=>{
+lightbox.addEventListener("click", (e) => {
 
-    if(e.target===lightbox){
+    if (e.target === lightbox) {
 
         closeLightbox();
 
@@ -214,30 +214,30 @@ lightbox.addEventListener("click",(e)=>{
 // TECLADO
 // ================================
 
-window.addEventListener("keydown",(e)=>{
+window.addEventListener("keydown", (e) => {
 
-    if(!lightbox.classList.contains("active"))
+    if (!lightbox.classList.contains("active"))
         return;
 
-    switch(e.key){
+    switch (e.key) {
 
         case "Escape":
 
             closeLightbox();
 
-        break;
+            break;
 
         case "ArrowRight":
 
             nextImage();
 
-        break;
+            break;
 
         case "ArrowLeft":
 
             prevImage();
 
-        break;
+            break;
 
     }
 
@@ -247,31 +247,31 @@ window.addEventListener("keydown",(e)=>{
 // HOVER GSAP
 // ================================
 
-cards.forEach(card=>{
+cards.forEach(card => {
 
-    card.addEventListener("mouseenter",()=>{
+    card.addEventListener("mouseenter", () => {
 
-        gsap.to(card,{
+        gsap.to(card, {
 
-            y:-12,
+            y: -12,
 
-            duration:.30,
+            duration: .30,
 
-            ease:"power2.out"
+            ease: "power2.out"
 
         });
 
     });
 
-    card.addEventListener("mouseleave",()=>{
+    card.addEventListener("mouseleave", () => {
 
-        gsap.to(card,{
+        gsap.to(card, {
 
-            y:0,
+            y: 0,
 
-            duration:.30,
+            duration: .30,
 
-            ease:"power2.out"
+            ease: "power2.out"
 
         });
 
@@ -283,21 +283,21 @@ cards.forEach(card=>{
 // CARD EXPANSÍVEL
 // ================================
 
-cards.forEach(card=>{
+cards.forEach(card => {
 
-    card.addEventListener("dblclick",()=>{
+    card.addEventListener("dblclick", () => {
 
         const state = Flip.getState(cards);
 
         card.classList.toggle("expanded");
 
-        Flip.from(state,{
+        Flip.from(state, {
 
-            duration:.55,
+            duration: .55,
 
-            ease:"power2.inOut",
+            ease: "power2.inOut",
 
-            absolute:true
+            absolute: true
 
         });
 
@@ -309,17 +309,17 @@ cards.forEach(card=>{
 // ANIMAÇÃO DE ENTRADA
 // ================================
 
-gsap.from(".card",{
+gsap.from(".card", {
 
-    opacity:0,
+    opacity: 0,
 
-    y:80,
+    y: 80,
 
-    stagger:.08,
+    stagger: .08,
 
-    duration:.8,
+    duration: .8,
 
-    ease:"power3.out"
+    ease: "power3.out"
 
 });
 
@@ -327,9 +327,9 @@ gsap.from(".card",{
 // PARALLAX NAS IMAGENS
 // ================================
 
-cards.forEach(card=>{
+cards.forEach(card => {
 
-    card.addEventListener("mousemove",(e)=>{
+    card.addEventListener("mousemove", (e) => {
 
         const img = card.querySelector("img");
 
@@ -338,25 +338,168 @@ cards.forEach(card=>{
         const x = (e.clientX - rect.left) / rect.width;
         const y = (e.clientY - rect.top) / rect.height;
 
-        gsap.to(img,{
+        gsap.to(img, {
 
-            x:(x-.5)*18,
+            x: (x - .5) * 18,
 
-            y:(y-.5)*18,
+            y: (y - .5) * 18,
 
-            duration:.25
+            duration: .25
 
         });
 
     });
 
-    card.addEventListener("mouseleave",()=>{
+    card.addEventListener("mouseleave", () => {
 
-        gsap.to(card.querySelector("img"),{
+        gsap.to(card.querySelector("img"), {
 
-            x:0,
-            y:0,
-            duration:.35
+            x: 0,
+            y: 0,
+            duration: .35
+
+        });
+
+    });
+
+});
+
+// ==========================================
+// CARD EXPANSÍVEL PREMIUM
+// ==========================================
+
+const gallery = document.querySelector(".gallery");
+
+let openedCard = null;
+
+cards.forEach(card => {
+
+    card.addEventListener("click", () => {
+
+        if (lightbox.classList.contains("active"))
+            return;
+
+        const state = Flip.getState(".card");
+
+        if (openedCard) {
+
+            openedCard.classList.remove("featured");
+
+            if (openedCard === card) {
+
+                openedCard = null;
+
+            } else {
+
+                card.classList.add("featured");
+
+                openedCard = card;
+
+            }
+
+        } else {
+
+            card.classList.add("featured");
+
+            openedCard = card;
+
+        }
+
+        Flip.from(state, {
+
+            duration: .8,
+
+            ease: "power3.inOut",
+
+            absolute: true,
+
+            nested: true
+
+        });
+
+    });
+
+});
+
+// ==========================================
+// micro animação do texto
+// ==========================================
+
+cards.forEach(card => {
+
+    card.addEventListener("mouseenter", () => {
+
+        gsap.fromTo(
+
+            card.querySelector("h3"),
+
+            {
+
+                y: 30,
+
+                opacity: 0
+
+            },
+
+            {
+
+                y: 0,
+
+                opacity: 1,
+
+                duration: .4
+
+            }
+
+        );
+
+    });
+
+});
+
+// ==========================================
+// EFEITO 3D
+// ==========================================
+
+cards.forEach(card => {
+
+    card.addEventListener("mousemove", (e) => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x = e.clientX - rect.left;
+
+        const y = e.clientY - rect.top;
+
+        const rx = ((y / rect.height) - .5) * -10;
+
+        const ry = ((x / rect.width) - .5) * 10;
+
+        gsap.to(card, {
+
+            rotateX: rx,
+
+            rotateY: ry,
+
+            transformPerspective: 1000,
+
+            transformOrigin: "center",
+
+            duration: .25
+
+        });
+
+    });
+
+    card.addEventListener("mouseleave", () => {
+
+        gsap.to(card, {
+
+            rotateX: 0,
+
+            rotateY: 0,
+
+            duration: .35
 
         });
 
