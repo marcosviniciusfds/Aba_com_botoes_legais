@@ -1,5 +1,5 @@
 // ================================
-// GALERIA PREMIUM
+// GALERIA MARCOS
 // ================================
 
 gsap.registerPlugin(Flip);

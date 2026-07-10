@@ -2,363 +2,356 @@
    RESET
 =========================== */
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
+body {
 
-    font-family:'Poppins',sans-serif;
+    font-family: 'Poppins', sans-serif;
 
     background:
-        radial-gradient(circle at top,#29344d,#0b1220 60%);
+        radial-gradient(circle at top, #29344d, #0b1220 60%);
 
-    color:#fff;
+    color: #fff;
 
-    min-height:100vh;
+    min-height: 100vh;
 
-    overflow-x:hidden;
+    overflow-x: hidden;
 }
 
 /* ===========================
    CONTAINER
 =========================== */
 
-.container{
+.container {
 
-    width:min(1200px,92%);
-    margin:auto;
-    padding:60px 0;
+    width: min(1200px, 92%);
+    margin: auto;
+    padding: 60px 0;
 }
 
-.titulo{
+.titulo {
 
-    text-align:center;
-    margin-bottom:50px;
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-.titulo h1{
+.titulo h1 {
 
-    font-size:42px;
-    font-weight:700;
-    margin-bottom:10px;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
-.titulo p{
+.titulo p {
 
-    opacity:.8;
-    font-size:18px;
+    opacity: .8;
+    font-size: 18px;
 }
 
 /* ===========================
    GRID
 =========================== */
 
-.gallery{
+.gallery {
 
-    display:grid;
+    display: grid;
 
     grid-template-columns:
-        repeat(auto-fit,minmax(280px,1fr));
+        repeat(auto-fit, minmax(280px, 1fr));
 
-    gap:25px;
+    gap: 25px;
 }
 
 /* ===========================
    CARD
 =========================== */
 
-.card{
+.card {
 
-    position:relative;
+    position: relative;
 
-    overflow:hidden;
+    overflow: hidden;
 
-    border-radius:28px;
+    border-radius: 28px;
 
-    cursor:pointer;
+    cursor: pointer;
 
-    height:340px;
+    height: 340px;
 
-    background:#1b2335;
+    background: #1b2335;
 
     transition:
         transform .35s,
         box-shadow .35s;
 
     box-shadow:
-        0 15px 40px rgba(0,0,0,.35);
+        0 15px 40px rgba(0, 0, 0, .35);
 }
 
-.card:hover{
+.card:hover {
 
     transform:
-        translateY(-10px)
-        scale(1.02);
+        translateY(-10px) scale(1.02);
 
     box-shadow:
-        0 30px 60px rgba(0,0,0,.45);
+        0 30px 60px rgba(0, 0, 0, .45);
 }
 
 /* ===========================
    IMAGEM
 =========================== */
 
-.card img{
+.card img {
 
-    width:100%;
+    width: 100%;
 
-    height:100%;
+    height: 100%;
 
-    object-fit:cover;
+    object-fit: cover;
 
     transition:
         transform .6s ease;
 }
 
-.card:hover img{
+.card:hover img {
 
-    transform:scale(1.10);
+    transform: scale(1.10);
 }
 
 /* ===========================
    OVERLAY
 =========================== */
 
-.overlay{
+.overlay {
 
-    position:absolute;
+    position: absolute;
 
-    inset:0;
+    inset: 0;
 
-    display:flex;
+    display: flex;
 
-    flex-direction:column;
+    flex-direction: column;
 
-    justify-content:flex-end;
+    justify-content: flex-end;
 
-    padding:30px;
+    padding: 30px;
 
     background:
-        linear-gradient(
-            transparent,
-            rgba(0,0,0,.78)
-        );
+        linear-gradient(transparent,
+            rgba(0, 0, 0, .78));
 
-    transition:.4s;
+    transition: .4s;
 }
 
-.overlay h3{
+.overlay h3 {
 
-    font-size:25px;
+    font-size: 25px;
 
-    margin-bottom:6px;
+    margin-bottom: 6px;
 }
 
-.overlay span{
+.overlay span {
 
-    opacity:.85;
+    opacity: .85;
 }
 
 /* ===========================
    BRILHO
 =========================== */
 
-.card::before{
+.card::before {
 
-    content:"";
+    content: "";
 
-    position:absolute;
+    position: absolute;
 
-    top:-100%;
+    top: -100%;
 
-    left:-50%;
+    left: -50%;
 
-    width:70%;
+    width: 70%;
 
-    height:250%;
+    height: 250%;
 
-    transform:rotate(25deg);
+    transform: rotate(25deg);
 
     background:
 
-    linear-gradient(
+        linear-gradient(transparent,
 
-        transparent,
+            rgba(255, 255, 255, .20),
 
-        rgba(255,255,255,.20),
+            transparent);
 
-        transparent
+    transition: 1s;
 
-    );
-
-    transition:1s;
-
-    z-index:2;
+    z-index: 2;
 }
 
-.card:hover::before{
+.card:hover::before {
 
-    left:180%;
+    left: 180%;
 }
 
 /* ===========================
    LIGHTBOX
 =========================== */
 
-.lightbox{
+.lightbox {
 
-    position:fixed;
+    position: fixed;
 
-    inset:0;
+    inset: 0;
 
     background:
-        rgba(0,0,0,.92);
+        rgba(0, 0, 0, .92);
 
-    display:flex;
+    display: flex;
 
-    justify-content:center;
+    justify-content: center;
 
-    align-items:center;
+    align-items: center;
 
-    opacity:0;
+    opacity: 0;
 
-    visibility:hidden;
+    visibility: hidden;
 
-    transition:.4s;
+    transition: .4s;
 
-    z-index:9999;
+    z-index: 9999;
 }
 
-.lightbox.active{
+.lightbox.active {
 
-    opacity:1;
+    opacity: 1;
 
-    visibility:visible;
+    visibility: visible;
 }
 
-.lightbox-image{
+.lightbox-image {
 
-    max-width:85%;
+    max-width: 85%;
 
-    max-height:85vh;
+    max-height: 85vh;
 
-    border-radius:20px;
+    border-radius: 20px;
 
     box-shadow:
-        0 25px 70px rgba(0,0,0,.55);
+        0 25px 70px rgba(0, 0, 0, .55);
 }
 
 /* ===========================
    BOTÃO FECHAR
 =========================== */
 
-.close{
+.close {
 
-    position:absolute;
+    position: absolute;
 
-    top:25px;
+    top: 25px;
 
-    right:40px;
+    right: 40px;
 
-    font-size:45px;
+    font-size: 45px;
 
-    cursor:pointer;
+    cursor: pointer;
 
-    transition:.3s;
+    transition: .3s;
 }
 
-.close:hover{
+.close:hover {
 
-    transform:rotate(180deg);
+    transform: rotate(180deg);
 }
 
 /* ===========================
    BOTÕES
 =========================== */
 
-.buttons{
+.buttons {
 
-    position:absolute;
+    position: absolute;
 
-    width:100%;
+    width: 100%;
 
-    display:flex;
+    display: flex;
 
-    justify-content:space-between;
+    justify-content: space-between;
 
-    padding:0 50px;
+    padding: 0 50px;
 }
 
-.buttons button{
+.buttons button {
 
-    width:60px;
+    width: 60px;
 
-    height:60px;
+    height: 60px;
 
-    border:none;
+    border: none;
 
-    border-radius:50%;
+    border-radius: 50%;
 
-    cursor:pointer;
+    cursor: pointer;
 
-    font-size:24px;
+    font-size: 24px;
 
-    background:rgba(255,255,255,.15);
+    background: rgba(255, 255, 255, .15);
 
-    color:#fff;
+    color: #fff;
 
-    backdrop-filter:blur(12px);
+    backdrop-filter: blur(12px);
 
-    transition:.35s;
+    transition: .35s;
 }
 
-.buttons button:hover{
+.buttons button:hover {
 
-    transform:scale(1.1);
+    transform: scale(1.1);
 
-    background:#ffffff;
+    background: #ffffff;
 
-    color:#000;
+    color: #000;
 }
 
 /* ===========================
    CARD EXPANDIDO
 =========================== */
 
-.card.expanded{
+.card.expanded {
 
-    z-index:50;
+    z-index: 50;
 
-    transform:scale(1.05);
+    transform: scale(1.05);
 
     box-shadow:
-        0 35px 80px rgba(0,0,0,.6);
+        0 35px 80px rgba(0, 0, 0, .6);
 }
 
 /* ===========================
    ANIMAÇÕES
 =========================== */
 
-@keyframes fadeUp{
+@keyframes fadeUp {
 
-    from{
+    from {
 
-        opacity:0;
+        opacity: 0;
 
         transform:
             translateY(40px);
     }
 
-    to{
+    to {
 
-        opacity:1;
+        opacity: 1;
 
         transform:
             translateY(0);
@@ -366,91 +359,91 @@ body{
 
 }
 
-.card{
+.card {
 
     animation:
         fadeUp .7s ease both;
 }
 
-.card:nth-child(2){
+.card:nth-child(2) {
 
-    animation-delay:.08s;
+    animation-delay: .08s;
 }
 
-.card:nth-child(3){
+.card:nth-child(3) {
 
-    animation-delay:.16s;
+    animation-delay: .16s;
 }
 
-.card:nth-child(4){
+.card:nth-child(4) {
 
-    animation-delay:.24s;
+    animation-delay: .24s;
 }
 
-.card:nth-child(5){
+.card:nth-child(5) {
 
-    animation-delay:.32s;
+    animation-delay: .32s;
 }
 
-.card:nth-child(6){
+.card:nth-child(6) {
 
-    animation-delay:.40s;
+    animation-delay: .40s;
 }
 
 /* ===========================
    RESPONSIVO
 =========================== */
 
-@media(max-width:900px){
+@media(max-width:900px) {
 
-.titulo h1{
+    .titulo h1 {
 
-    font-size:34px;
+        font-size: 34px;
+    }
+
+    .card {
+
+        height: 290px;
+    }
+
 }
 
-.card{
+@media(max-width:600px) {
 
-    height:290px;
-}
+    .container {
 
-}
+        width: 95%;
+    }
 
-@media(max-width:600px){
+    .gallery {
 
-.container{
+        gap: 18px;
+    }
 
-    width:95%;
-}
+    .card {
 
-.gallery{
+        height: 240px;
+    }
 
-    gap:18px;
-}
+    .overlay {
 
-.card{
+        padding: 20px;
+    }
 
-    height:240px;
-}
+    .overlay h3 {
 
-.overlay{
+        font-size: 20px;
+    }
 
-    padding:20px;
-}
+    .buttons {
 
-.overlay h3{
+        padding: 0 15px;
+    }
 
-    font-size:20px;
-}
+    .buttons button {
 
-.buttons{
-
-    padding:0 15px;
-}
-
-.buttons button{
-
-    width:48px;
-    height:48px;
-}
+        width: 48px;
+        height: 48px;
+    }
 
 }
