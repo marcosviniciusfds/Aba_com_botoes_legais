@@ -28,21 +28,53 @@ body {
     overflow-x: hidden;
 }
 
-btn {
-    
-    right: 10px;
-    width: 20%;
-    height: 40px;
-    text-align: center;
-    border-radius: 5px;
-    color: #000;
-    background-color: gold;
-    cursor: pointer;
+/* ===========================
+   BOTÃO
+=========================== */
+
+.footer-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-btn:hover {
-    background-color: #fff;
+.btn-home {
+    display: inline-block;
+    background-color: goldenrod;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
 }
+
+.btn-home:hover {
+    background-color: gold;
+}
+
+.btn-topo {
+    display: inline-block;
+    background-color: #0056b3;
+    color: #ffffff;
+    padding: 12px 20px;
+    margin-right: 4px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-topo:hover {
+    background-color: #003d82;
+}
+
+
 
 .margem-topo {
     margin-top: 35px;
