@@ -28,6 +28,26 @@ body {
     overflow-x: hidden;
 }
 
+btn {
+    
+    right: 10px;
+    width: 20%;
+    height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    color: #000;
+    background-color: gold;
+    cursor: pointer;
+}
+
+btn:hover {
+    background-color: #fff;
+}
+
+.margem-topo {
+    margin-top: 35px;
+}
+
 .texto-color {
     color: #000;
 }
