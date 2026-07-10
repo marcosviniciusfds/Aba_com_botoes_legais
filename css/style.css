@@ -18,13 +18,18 @@ body {
     /*
     background: radial-gradient(circle at top, #29344d, #0b1220 60%);
     */
-    background: linear-gradient(90deg, #a6a6a6, #ffffff);;
+    background: linear-gradient(90deg, #a6a6a6, #ffffff);
+    ;
 
     color: #fff;
 
     min-height: 100vh;
 
     overflow-x: hidden;
+}
+
+.texto-color {
+    color: #000;
 }
 
 /* ===========================
